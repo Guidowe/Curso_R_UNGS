@@ -143,3 +143,5 @@ __Modulo 7: Programación Funcional:__
 - [Wickham, H. (2016), ggplot2: elegant graphics for data analysis. Springer, 2016. ](https://ggplot2-book.org/)
 
 - [Vázquez Brust, A. (2019), Ciencia de Datos para Gente Sociable](https://bitsandbricks.github.io/ciencia_de_datos_gente_sociable/)
+
+- [Wickham, H. (2019), The tidyverse style guide](https://style.tidyverse.org/)
