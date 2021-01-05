@@ -140,6 +140,8 @@ __Modulo 7: Programación Funcional:__
 
 - [Grolemund, G. y Wickham, H. (2019), R para Ciencia de Datos](https://es.r4ds.hadley.nz)
 
+- [INDEC(2003), La nueva Encuesta Permanente de Hogares de Argentina. 2003]
+
 - [Wickham, H. (2016), ggplot2: elegant graphics for data analysis. Springer, 2016. ](https://ggplot2-book.org/)
 
 - [Vázquez Brust, A. (2019), Ciencia de Datos para Gente Sociable](https://bitsandbricks.github.io/ciencia_de_datos_gente_sociable/)
