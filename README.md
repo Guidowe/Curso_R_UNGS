@@ -70,19 +70,13 @@ __Módulo 3 - Tidyverse__
 + Temas de clase:
   + Limpieza de Base de datos: Renombrar y recodificar variables, tratamiento de valores faltantes (missing values/ NA´s)
   + Seleccionar variables, ordenar y agrupar la base de datos para realizar cálculos
-  + Creación de nuevas variables
-  + Aplicar filtros sobre la base de datos
+  + Creación de nuevas variables, filtros y uniones de bases de datos
   + Construir medidas de resumen de la información
-  + Tratamiento de variables numéricas (edad, ingresos, horas de trabajo, cantidad de hijos / componentes del hogar, entre otras).
-  + Ejercicios prácticos para aplicar lo expuesto: Replicar Informe Técnico de Mercado de Trabajo (EPH-INDEC) 
++ Aplicaciones:   
   + Cálculo de tasas básicas del mercado de trabajo (tasa de actividad, empleo, desempleo, entre otras) 
   + Cálculo de tasas para distintos subconjuntos poblacionales (por aglomerado, sexo, grupos de edad)
-
-+ Cálculo de los indicadores de pobreza e indigencia por línea de ingresos.
-  + Definición de la Canasta Básica Alimentaria y Canasta Básica Total
-  + Metodología del cálculo de pobreza por línea (para personas y hogares)
-  + Ejercicio de estimación de tasas de Pobreza e Indigencia
-  + Ejercicio de estimación de tasas de Pobreza e Indigencia para subgrupos poblacionales (Género, Edad, Regiones)  
+  + Estimación de indicadores asociados a la precariedad laboral
+  + Unión de información de la base individual con información de la base de hogares
 
 <br>
 
@@ -110,31 +104,6 @@ __Módulo 5: Documentación en R. Generación de reportes/informes.__
     + Caracteres especiales para incluir múltiples recursos en el texto del informe: Links a páginas web, notas al pie, enumeraciones, cambios en el formato de letra (tamaño, negrita, cursiva)
     + Código embebido en el texto para automatización de reportes
 
-<br>
-
-__Módulo 6: Strings__
-
-[![](img/Download.png)](Modulo%206%20-%20Strings.rar)
-
-+ Temas de clase: 
-  + Acercamiento a técnicas de text mining:
-    + Paquete stringr: Localización, substracción, y reemplazo de patrones en variables strings 
-    + Expresiones regulares
-    + Corpus de texto, Normalización, Armado de DocumentTermMatrix y Nubes de Palabras
-  
-<br>
-
-__Modulo 7: Programación Funcional:__
-
-[![](img/Download.png)](Modulo%207%20-%20Programacion%20funcional.rar)
-
-+ Temas de clase: 
-  + Acercamiento a técnicas más sofisticadas en R, útiles para automatizar el procesamiento periódico de la información:
-    + Estructuras de código condicionales
-    + Loops
-    + Creación de funciones a medida del usuario
-  
-<br>
 
 # Bibliografía complementaria
 
