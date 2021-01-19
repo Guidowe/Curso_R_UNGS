@@ -297,47 +297,49 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">Clase 4. Práctica Independiente</h1>
-<h3 class="subtitle">Clase 4. Tidyverse - Pobreza</h3>
-<h4 class="date">27/8/2019</h4>
+<h3 class="subtitle">Clase 4. Aplicación Tidyverse</h3>
 
 </div>
 
 
 <!-- rnb-text-begin -->
-<div id="ejercicios-vinculados-a-la-estimacion-de-pobreza" class="section level1">
-<h1>Ejercicios vinculados a la estimacion de pobreza</h1>
-<p>Levantar la base del 1t de 2017</p>
+<div id="ejercicios-de-práctica-con-variables-de-ingresos." class="section level1">
+<h1>Ejercicios de práctica con variables de ingresos.</h1>
+<p>Levantar la base individual del 1t de 2017</p>
 <!-- rnb-text-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-text-begin -->
-<p>Estimar cuantas personas habitan en hogares con ingresos totales menores a $15.000</p>
+<p>Crear un dataframe con las siguientes estimaciones:</p>
+<ul>
+<li>Total (ponderado) de perceptores de ingresos</li>
+<li>Perceptores de ingresos con ingreso individual total menor a $8.000</li>
+<li>Perceptores de ingresos con ingreso individual total entre $8.000 y $15.000</li>
+<li>Perceptores de ingresos con ingreso individual total mayor a $15.000</li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-text-begin -->
+<p>Estimar cuantas personas habitan en hogares con ingresos totales familiares (ITF) menores a $15.000</p>
 <!-- rnb-text-end -->
 <!-- rnb-text-begin -->
 </div>
 <div id="adultos-equivalentes" class="section level1">
 <h1>Adultos equivalentes</h1>
-<p>Construir en la base una variable que identifique el total de personas y de adultos equivalentes presentes en cada hogar (Usar el excel de la carpeta <em>Fuentes</em> que contiene la definición de los adultos eq.)</p>
+<p>Construir dentro de la base una variable que identifique el total de personas presentes en el hogar que habita cada individuo.</p>
+<p>Pista: La función <em>n()</em> permite contar la cantidad de registros de un determinado agrupamiento.</p>
+<p>Por ejemplo: Aquí, agrego una columna que me indique para cada caso, cuantos registros hay del mismo aglomerado.</p>
 <!-- rnb-text-end -->
 <!-- rnb-text-begin -->
-<p>A partir del punto anterior: - ¿Cuantas personas habitan en hogares de 7 o más integrantes?</p>
+<p>Con una lógica similar al ejemplo anterior, crear una variable en la base denominada <em>Personas_en_hogar</em> que muestre cuantas personas habitan en el mismo hogar que cada individuo en cuestión.</p>
 <!-- rnb-text-end -->
 <!-- rnb-text-begin -->
-<ul>
-<li>¿Cuantos hogares tienen más de 7 o más integrantes?</li>
-<li>Construir una variable que exprese el Ingreso Total Familiar (ITF) per capita de cada hogar</li>
-<li>Construir una variable que exprese el Ingreso Total Familiar (ITF) por adulto equivalente</li>
-<li>Calcular el ITF per capita promedio por Región</li>
-<li>Calcular el ITF por adulto equivalente promedio por Region</li>
-</ul>
-<!-- rnb-text-end -->
-<!-- rnb-text-begin -->
+<p>A partir del punto anterior: - ¿Cuantas personas habitan en hogares de 7 o más integrantes? - ¿Cual es el ingreso familiar per capita en estos hogares?</p>
 <!-- rnb-text-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIkNsYXNlIDQuIFByw6FjdGljYSBJbmRlcGVuZGllbnRlIg0Kc3VidGl0bGU6ICJDbGFzZSA0LiBUaWR5dmVyc2UgLSBQb2JyZXphIg0KZGF0ZTogIjI3LzgvMjAxOSINCm91dHB1dDoNCiAgaHRtbF9ub3RlYm9vazogDQogICAgdG9jOiB0cnVlDQogICAgdG9jX2Zsb2F0OiB0cnVlIA0KLS0tDQoNCg0KIyBFamVyY2ljaW9zIHZpbmN1bGFkb3MgYSBsYSBlc3RpbWFjaW9uIGRlIHBvYnJlemENCkxldmFudGFyIGxhIGJhc2UgZGVsIDF0IGRlIDIwMTcgDQoNCmBgYHtyIHNldHVwfQ0Ka25pdHI6Om9wdHNfY2h1bmskc2V0KGV2YWwgPSBGQUxTRSwgaW5jbHVkZSA9IEZBTFNFKQ0KYGBgDQoNCmBgYHtyIGVjaG89VFJVRX0NCmxpYnJhcnkocmVhZHhsKQ0KbGlicmFyeSh0aWR5dmVyc2UpDQpBREVRVUkgPC0gcmVhZF9leGNlbCgiLi4vRnVlbnRlcy9BREVRVUkueGxzeCIpDQpSZWdpb25lcyA8LSByZWFkX2V4Y2VsKCIuLi9GdWVudGVzL1JlZ2lvbmVzLnhsc3giKQ0KYmFzZSA8LSByZWFkLnRhYmxlKCIuLi9GdWVudGVzL3VzdV9pbmRpdmlkdWFsX3QxMTcudHh0IixoZWFkZXIgPSBULHNlcCA9ICI7IixkZWMgPSAiLCIpDQpgYGANCg0KRXN0aW1hciBjdWFudGFzIHBlcnNvbmFzIGhhYml0YW4gZW4gaG9nYXJlcyBjb24gaW5ncmVzb3MgdG90YWxlcyBtZW5vcmVzIGEgJDE1LjAwMA0KDQpgYGB7ciBlY2hvPVRSVUV9DQpiYXNlICU+JSANCiAgc3VtbWFyaXNlKENhc29zX1BvbmRlcmFkb3MgPXN1bShQT05ESUhbSVRGPDE1MDAwXSkpDQpgYGANCiMgQWR1bHRvcyBlcXVpdmFsZW50ZXMgDQpDb25zdHJ1aXIgZW4gbGEgYmFzZSB1bmEgdmFyaWFibGUgcXVlIGlkZW50aWZpcXVlIGVsIHRvdGFsIGRlIHBlcnNvbmFzIHkgZGUgYWR1bHRvcyBlcXVpdmFsZW50ZXMgcHJlc2VudGVzIGVuIGNhZGEgaG9nYXIgKFVzYXIgZWwgZXhjZWwgZGUgbGEgY2FycGV0YSBfRnVlbnRlc18gcXVlIGNvbnRpZW5lIGxhIGRlZmluaWNpw7NuIGRlIGxvcyBhZHVsdG9zIGVxLikNCmBgYHtyIGVjaG89VFJVRX0NCmJhc2VfY29uX2lkZW50aWZpY2Fkb3IgPC0gYmFzZSAlPiUgDQogIGxlZnRfam9pbihBREVRVUksYnkgPSBjKCJDSDA0IiwgIkNIMDYiKSkgJT4lIA0KICBncm91cF9ieShDT0RVU1UsTlJPX0hPR0FSKSAlPiUgDQogIG11dGF0ZShQZXJzb25hc19lbl9ob2dhciA9IG4oKSwNCiAgICAgICAgIGFkZXF1aV9lbl9ob2dhciA9IHN1bShhZGVxdWkpKQ0KYGBgDQpBIHBhcnRpciBkZWwgcHVudG8gYW50ZXJpb3I6DQogLSDCv0N1YW50YXMgcGVyc29uYXMgaGFiaXRhbiBlbiBob2dhcmVzIGRlIDcgbyBtw6FzIGludGVncmFudGVzPw0KYGBge3IgZWNobz1UUlVFfQ0KYmFzZV9jb25faWRlbnRpZmljYWRvciAlPiUgDQogIHVuZ3JvdXAoKSAlPiUgDQogIGZpbHRlcihQZXJzb25hc19lbl9ob2dhcj49NykgJT4lIA0KICBzdW1tYXJpc2UoUEVSU09OQVMgPSBzdW0oUE9OREVSQSkpDQoNCg0KYGBgDQogLSDCv0N1YW50b3MgaG9nYXJlcyB0aWVuZW4gbcOhcyBkZSA3IG8gbcOhcyBpbnRlZ3JhbnRlcz8NCiAtIENvbnN0cnVpciB1bmEgdmFyaWFibGUgcXVlIGV4cHJlc2UgZWwgSW5ncmVzbyBUb3RhbCBGYW1pbGlhciAoSVRGKSBwZXIgY2FwaXRhIGRlIGNhZGEgaG9nYXINCiAtIENvbnN0cnVpciB1bmEgdmFyaWFibGUgcXVlIGV4cHJlc2UgZWwgSW5ncmVzbyBUb3RhbCBGYW1pbGlhciAoSVRGKSBwb3IgYWR1bHRvIGVxdWl2YWxlbnRlIA0KIC0gQ2FsY3VsYXIgZWwgSVRGIHBlciBjYXBpdGEgcHJvbWVkaW8gcG9yIFJlZ2nDs24gDQogLSBDYWxjdWxhciBlbCBJVEYgcG9yIGFkdWx0byBlcXVpdmFsZW50ZSBwcm9tZWRpbyBwb3IgUmVnaW9uDQoNCmBgYHtyfQ0KYmFzZV9hX25pdmVsX2hvZ2FyIDwtIGJhc2VfY29uX2lkZW50aWZpY2Fkb3IgJT4lIA0KICBncm91cF9ieShDT0RVU1UsTlJPX0hPR0FSKSAlPiUgDQogIHN1bW1hcmlzZShQT05ESUggPSB1bmlxdWUoUE9ORElIKSwNCiAgICAgICAgICAgIElURiA9IHVuaXF1ZShJVEYpLA0KICAgICAgICAgICAgUkVHSU9OID0gdW5pcXVlKFJFR0lPTiksDQogICAgICAgICAgICBQZXJzb25hcyA9IG4oKSwNCiAgICAgICAgICAgIGFkZXF1aV9lbl9ob2dhciA9IHN1bShhZGVxdWkpKQ0KDQoNCmJhc2VfYV9uaXZlbF9ob2dhciAlPiUgDQogIGZpbHRlcihQZXJzb25hcz49NykgJT4lIA0KICB1bmdyb3VwKCkgJT4lIA0KICBzdW1tYXJpc2UoSE9HQVJFUyA9IHN1bShQT05ESUgpKQ0KYGBgDQoNCmBgYHtyfQ0KYmFzZV9hX25pdmVsX2hvZ2FyICU+JSANCiAgbXV0YXRlKElURi5wYyA9IElURi9QZXJzb25hcywNCiAgICAgICAgIElURi5hZSA9IElURi9hZGVxdWlfZW5faG9nYXIpICU+JSANCiAgZ3JvdXBfYnkoUkVHSU9OKSAlPiUgDQogIHN1bW1hcmlzZShJVEYucGMucHJvbWVkaW8gPSB3ZWlnaHRlZC5tZWFuKElURi5wYyxQT05ESUgpLA0KICAgICAgICAgICAgSVRGLmFlLnByb21lZGlvID0gd2VpZ2h0ZWQubWVhbihJVEYuYWUsUE9ORElIKSkgJT4lIA0KICBsZWZ0X2pvaW4oUmVnaW9uZXMpDQpgYGANCg0K</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkNsYXNlIDQuIFByw6FjdGljYSBJbmRlcGVuZGllbnRlIg0Kc3VidGl0bGU6ICJDbGFzZSA0LiBBcGxpY2FjacOzbiBUaWR5dmVyc2UiDQpvdXRwdXQ6DQogIGh0bWxfbm90ZWJvb2s6IA0KICAgIHRvYzogdHJ1ZQ0KICAgIHRvY19mbG9hdDogdHJ1ZSANCi0tLQ0KDQoNCiMgRWplcmNpY2lvcyBkZSBwcsOhY3RpY2EgY29uIHZhcmlhYmxlcyBkZSBpbmdyZXNvcy4NCkxldmFudGFyIGxhIGJhc2UgaW5kaXZpZHVhbCBkZWwgMXQgZGUgMjAxNyANCg0KYGBge3Igc2V0dXB9DQprbml0cjo6b3B0c19jaHVuayRzZXQoZXZhbCA9IEZBTFNFLCBpbmNsdWRlID0gRkFMU0UpDQpgYGANCg0KYGBge3IgZWNobz1UUlVFLCBtZXNzYWdlPUZBTFNFLCB3YXJuaW5nPUZBTFNFfQ0KbGlicmFyeShyZWFkeGwpDQpsaWJyYXJ5KHRpZHl2ZXJzZSkNClJlZ2lvbmVzIDwtIHJlYWRfZXhjZWwoIi4uL0Z1ZW50ZXMvUmVnaW9uZXMueGxzeCIpDQpiYXNlIDwtIHJlYWQudGFibGUoIi4uL0Z1ZW50ZXMvdXN1X2luZGl2aWR1YWxfdDExNy50eHQiLGhlYWRlciA9IFQsc2VwID0gIjsiLGRlYyA9ICIsIikNCmBgYA0KDQoNCkNyZWFyIHVuIGRhdGFmcmFtZSBjb24gbGFzIHNpZ3VpZW50ZXMgZXN0aW1hY2lvbmVzOiAgIA0KDQogLSBUb3RhbCAocG9uZGVyYWRvKSBkZSBwZXJjZXB0b3JlcyBkZSBpbmdyZXNvcyANCiAtIFBlcmNlcHRvcmVzIGRlIGluZ3Jlc29zIGNvbiBpbmdyZXNvIGluZGl2aWR1YWwgdG90YWwgbWVub3IgYSAkOC4wMDANCiAtIFBlcmNlcHRvcmVzIGRlIGluZ3Jlc29zIGNvbiBpbmdyZXNvIGluZGl2aWR1YWwgdG90YWwgZW50cmUgICQ4LjAwMCB5ICQxNS4wMDANCiAtIFBlcmNlcHRvcmVzIGRlIGluZ3Jlc29zIGNvbiBpbmdyZXNvIGluZGl2aWR1YWwgdG90YWwgbWF5b3IgYSAkMTUuMDAwDQogDQpgYGB7cn0NCg0KYGBgDQoNCkVzdGltYXIgY3VhbnRhcyBwZXJzb25hcyBoYWJpdGFuIGVuIGhvZ2FyZXMgY29uIGluZ3Jlc29zIHRvdGFsZXMgZmFtaWxpYXJlcyAoSVRGKSBtZW5vcmVzIGEgJDE1LjAwMA0KDQpgYGB7ciBlY2hvPVRSVUV9DQoNCmBgYA0KIyBBZHVsdG9zIGVxdWl2YWxlbnRlcyAgIA0KQ29uc3RydWlyIGRlbnRybyBkZSBsYSBiYXNlIHVuYSB2YXJpYWJsZSBxdWUgaWRlbnRpZmlxdWUgZWwgdG90YWwgZGUgcGVyc29uYXMgcHJlc2VudGVzIGVuIGVsIGhvZ2FyIHF1ZSBoYWJpdGEgY2FkYSBpbmRpdmlkdW8uICAgDQoNClBpc3RhOiBMYSBmdW5jacOzbiAqbigpKiBwZXJtaXRlIGNvbnRhciBsYSBjYW50aWRhZCBkZSByZWdpc3Ryb3MgZGUgdW4gZGV0ZXJtaW5hZG8gYWdydXBhbWllbnRvLiAgIA0KDQpQb3IgZWplbXBsbzogQXF1w60sIGFncmVnbyB1bmEgY29sdW1uYSBxdWUgbWUgaW5kaXF1ZSBwYXJhIGNhZGEgY2FzbywgY3VhbnRvcyByZWdpc3Ryb3MgaGF5IGRlbCBtaXNtbyBhZ2xvbWVyYWRvLg0KDQpgYGB7cn0NCmVqZW1wbG8gPC0gYmFzZSAlPiUgDQogIGdyb3VwX2J5KEFHTE9NRVJBRE8pICU+JSANCiAgbXV0YXRlKENhc29zX2VuX2FnbG9tID0gbigpKSAlPiUgDQogIHVuZ3JvdXAoKQ0KDQplamVtcGxvICU+JSANCnNlbGVjdChQT05ERVJBLENIMDQsQUdMT01FUkFETyxDYXNvc19lbl9hZ2xvbSkgJT4lIA0Kc2FtcGxlX24oLixzaXplID0gMTApICMgTXVlc3RybyBhbGd1bm9zIGNhc29zDQpgYGANCg0KQ29uIHVuYSBsw7NnaWNhIHNpbWlsYXIgYWwgZWplbXBsbyBhbnRlcmlvciwgY3JlYXIgdW5hIHZhcmlhYmxlIGVuIGxhIGJhc2UgZGVub21pbmFkYSAqUGVyc29uYXNfZW5faG9nYXIqIHF1ZSBtdWVzdHJlIGN1YW50YXMgcGVyc29uYXMgaGFiaXRhbiBlbiBlbCBtaXNtbyBob2dhciBxdWUgY2FkYSBpbmRpdmlkdW8gZW4gY3Vlc3Rpw7NuLiAgIA0KDQpgYGB7ciBlY2hvPVRSVUV9DQoNCmBgYA0KDQpBIHBhcnRpciBkZWwgcHVudG8gYW50ZXJpb3I6DQogLSDCv0N1YW50YXMgcGVyc29uYXMgaGFiaXRhbiBlbiBob2dhcmVzIGRlIDcgbyBtw6FzIGludGVncmFudGVzPw0KIC0gwr9DdWFsIGVzIGVsIGluZ3Jlc28gZmFtaWxpYXIgcGVyIGNhcGl0YSBlbiBlc3RvcyBob2dhcmVzPw0KDQpgYGB7cn0NCg0KYGBgDQoNCg==</div>
 
 
 </div>

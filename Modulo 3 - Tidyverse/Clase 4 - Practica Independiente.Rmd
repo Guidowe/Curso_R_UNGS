@@ -1,7 +1,6 @@
 ---
 title: "Clase 4. Práctica Independiente"
-subtitle: "Clase 4. Tidyverse - Pobreza"
-date: "27/8/2019"
+subtitle: "Clase 4. Aplicación Tidyverse"
 output:
   html_notebook: 
     toc: true
@@ -9,75 +8,66 @@ output:
 ---
 
 
-# Ejercicios vinculados a la estimacion de pobreza
-Levantar la base del 1t de 2017 
+# Ejercicios de práctica con variables de ingresos.
+Levantar la base individual del 1t de 2017 
 
 ```{r setup}
 knitr::opts_chunk$set(eval = FALSE, include = FALSE)
 ```
 
-```{r echo=TRUE}
+```{r echo=TRUE, message=FALSE, warning=FALSE}
 library(readxl)
 library(tidyverse)
-ADEQUI <- read_excel("../Fuentes/ADEQUI.xlsx")
 Regiones <- read_excel("../Fuentes/Regiones.xlsx")
 base <- read.table("../Fuentes/usu_individual_t117.txt",header = T,sep = ";",dec = ",")
 ```
 
-Estimar cuantas personas habitan en hogares con ingresos totales menores a $15.000
+
+Crear un dataframe con las siguientes estimaciones:   
+
+ - Total (ponderado) de perceptores de ingresos 
+ - Perceptores de ingresos con ingreso individual total menor a $8.000
+ - Perceptores de ingresos con ingreso individual total entre  $8.000 y $15.000
+ - Perceptores de ingresos con ingreso individual total mayor a $15.000
+ 
+```{r}
+
+```
+
+Estimar cuantas personas habitan en hogares con ingresos totales familiares (ITF) menores a $15.000
 
 ```{r echo=TRUE}
-base %>% 
-  summarise(Casos_Ponderados =sum(PONDIH[ITF<15000]))
+
 ```
-# Adultos equivalentes 
-Construir en la base una variable que identifique el total de personas y de adultos equivalentes presentes en cada hogar (Usar el excel de la carpeta _Fuentes_ que contiene la definición de los adultos eq.)
+# Adultos equivalentes   
+Construir dentro de la base una variable que identifique el total de personas presentes en el hogar que habita cada individuo.   
+
+Pista: La función *n()* permite contar la cantidad de registros de un determinado agrupamiento.   
+
+Por ejemplo: Aquí, agrego una columna que me indique para cada caso, cuantos registros hay del mismo aglomerado.
+
+```{r}
+ejemplo <- base %>% 
+  group_by(AGLOMERADO) %>% 
+  mutate(Casos_en_aglom = n()) %>% 
+  ungroup()
+
+ejemplo %>% 
+select(PONDERA,CH04,AGLOMERADO,Casos_en_aglom) %>% 
+sample_n(.,size = 10) # Muestro algunos casos
+```
+
+Con una lógica similar al ejemplo anterior, crear una variable en la base denominada *Personas_en_hogar* que muestre cuantas personas habitan en el mismo hogar que cada individuo en cuestión.   
+
 ```{r echo=TRUE}
-base_con_identificador <- base %>% 
-  left_join(ADEQUI,by = c("CH04", "CH06")) %>% 
-  group_by(CODUSU,NRO_HOGAR) %>% 
-  mutate(Personas_en_hogar = n(),
-         adequi_en_hogar = sum(adequi))
+
 ```
+
 A partir del punto anterior:
  - ¿Cuantas personas habitan en hogares de 7 o más integrantes?
-```{r echo=TRUE}
-base_con_identificador %>% 
-  ungroup() %>% 
-  filter(Personas_en_hogar>=7) %>% 
-  summarise(PERSONAS = sum(PONDERA))
-
-
-```
- - ¿Cuantos hogares tienen más de 7 o más integrantes?
- - Construir una variable que exprese el Ingreso Total Familiar (ITF) per capita de cada hogar
- - Construir una variable que exprese el Ingreso Total Familiar (ITF) por adulto equivalente 
- - Calcular el ITF per capita promedio por Región 
- - Calcular el ITF por adulto equivalente promedio por Region
+ - ¿Cual es el ingreso familiar per capita en estos hogares?
 
 ```{r}
-base_a_nivel_hogar <- base_con_identificador %>% 
-  group_by(CODUSU,NRO_HOGAR) %>% 
-  summarise(PONDIH = unique(PONDIH),
-            ITF = unique(ITF),
-            REGION = unique(REGION),
-            Personas = n(),
-            adequi_en_hogar = sum(adequi))
 
-
-base_a_nivel_hogar %>% 
-  filter(Personas>=7) %>% 
-  ungroup() %>% 
-  summarise(HOGARES = sum(PONDIH))
-```
-
-```{r}
-base_a_nivel_hogar %>% 
-  mutate(ITF.pc = ITF/Personas,
-         ITF.ae = ITF/adequi_en_hogar) %>% 
-  group_by(REGION) %>% 
-  summarise(ITF.pc.promedio = weighted.mean(ITF.pc,PONDIH),
-            ITF.ae.promedio = weighted.mean(ITF.ae,PONDIH)) %>% 
-  left_join(Regiones)
 ```
 
