@@ -182,36 +182,6 @@ ggsave(filename = paste0("../Resultados/", "regresion lineal.png"),scale = 2)
 
 
 
-#### Treemaps (bonus track)
-
-```{r}
-library(treemapify)
-```
-
-
-[Trabajo doméstico no remunerado](https://data.buenosaires.gob.ar/dataset/trabajo-domestico-no-remunerado)
-
-
-```{r message=FALSE, warning=FALSE}
-trabajo_no_remunerado <- read_csv('../Fuentes/prom_t_simul_dom_16_sexo__annio__g_edad_limpio.csv')
-```
-
-```{r}
- trabajo_no_remunerado %>% 
-  filter(sexo != 'TOTAL', grupo_edad != 'TOTAL') %>%
-   mutate(promedio_hs_diarias = as.numeric(promedio_hs_diarias),
-          sexo = case_when(sexo=='m'~'Mujer',
-                           sexo=='v'~'Varón')) %>% 
-  ggplot(., aes(area = promedio_hs_diarias, fill = promedio_hs_diarias, label = grupo_edad,
-                subgroup = sexo)) +
-  geom_treemap() +
-  geom_treemap_subgroup_border() +
-  geom_treemap_subgroup_text(place = "centre", grow = T, alpha = 0.5, colour =
-                             "black", fontface = "italic", min.size = 0) +
-  geom_treemap_text(colour = "white", place = "topleft", reflow = T)+
-  theme(legend.position = 'none')
-```
-
 
 
 
