@@ -245,6 +245,14 @@ ggplot() +
   labs(title = "Ingreso de la Ocupación Principal promedio por Sexo. Año 2018") +
   labs(caption = "Fuente: Elaboración propia en base a EPH-INDEC")
 
+####Como grabar un gráfico##
+
+ggsave(filename = "Resultados/Ingresos por sexo 2018.jpg",
+       height = 9,
+       width = 15)
+
+
+####GGpairs##
 
 base %>%
   select(P21,EDAD = CH06,SEXO = CH04,NIVEL_ED) %>%

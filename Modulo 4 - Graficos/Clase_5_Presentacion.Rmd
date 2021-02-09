@@ -307,11 +307,12 @@ ggplot(data = base) +
   labs(caption = "Fuente: Elaboración propia en base a EPH-INDEC") +
   scale_y_continuous(limits = c(0, 50000)) +
   coord_flip()
+
+
 ```
 
 
 `r apply_reveal("g3")`
-
 
 ---
 class: middle, center, inverse

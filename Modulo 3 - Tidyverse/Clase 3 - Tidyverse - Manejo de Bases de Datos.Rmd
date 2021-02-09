@@ -1,5 +1,5 @@
 ---
-title: "Introducción a R para Ciencias Sociales. Aplicación práctica en la EPH"
+title: "Introducción a R. Aplicación práctica en la EPH"
 subtitle: "Clase 3 - Tidyverse y Tasas básicas del Mercado de Trabajo"
 output:
   html_notebook:
@@ -91,7 +91,7 @@ Esta función puede utilizarse para hacer tabulados univariados o bivariados en 
 ```{r}
 table(Datos$MAS_500,Datos$CH04) 
 ```
-En este caso el resultado es un conteo *muestral* de los casos de varones (CH04 == 1) y mujeres (CH04 == 2) según sean de aglomerados de más de 500.000 habitantes (MAS_500 == "S"") o menos de 500.000 habitantes (MAS_500 == "N"").  
+En este caso el resultado es un conteo *muestral* de los casos de varones (CH04 == 1) y mujeres (CH04 == 2) según sean de aglomerados de más de 500.000 habitantes (MAS_500 == "S") o menos de 500.000 habitantes (MAS_500 == "N").  
 
 Más adelante en el curso veremos una implementación del *paquete eph* que extiende las potencialidades de esta función, permitiendo hacer tabulados con ponderadores, calcular las distribuciones porcentuales, entre otras.
 
